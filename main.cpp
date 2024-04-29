@@ -18,10 +18,13 @@ int main() {
 
     client.sendMessage("point;start;ready;1");
 
+    std::thread inputThread(userInputThread);
+
     while (true) {
         if(stopRequested) {
             break;
         }
+        usleep(1'000'000);
     }
 
     return 0;
